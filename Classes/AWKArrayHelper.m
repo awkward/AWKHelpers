@@ -27,6 +27,12 @@
 }
 
 - (BOOL)hasObjectAtIndex:(NSUInteger)index {
+    if (index == NSNotFound) {
+        return NO;
+    }
+    if ((NSInteger)index < 0) {
+        return NO;
+    }
     if (self.count == 0) {
         return NO;
     }
