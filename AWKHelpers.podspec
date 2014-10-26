@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AWKHelpers"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "A growing collection of UIKit and Foundation categories (helpers)"
   s.description      = <<-DESC
                        A growing collection of UIKit and Foundation categories (helpers). Support includes: 
