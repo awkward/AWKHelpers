@@ -9,3 +9,5 @@
 #import "AWKDeviceHelper.h"
 #import "AWKDictionaryHelper.h"
 #import "AWKArrayHelper.h"
+#import "AWKColorHelper.h"
+#import "AWKStringHelper.h"
