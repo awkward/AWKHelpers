@@ -117,11 +117,4 @@
  */
 -(BOOL)hasiOS10OrNewer;
 
-/**
- Checks if the Current UIDevice has support for healthkit. This includes checking if the version of iOS is 8.0.2 or newer
- 
- @return Returns YES if the device systemVersion is newer, if not it's NO
- */
--(BOOL)supportsHealthkit;
-
 @end

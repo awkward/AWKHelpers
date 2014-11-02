@@ -8,7 +8,6 @@
 
 #import "AWKDeviceHelper.h"
 #import <sys/utsname.h>
-#import <HealthKit/HealthKit.h>
 
 @implementation UIDevice (AWKDeviceHelper)
 
@@ -117,23 +116,6 @@
 
 -(BOOL)hasiOS10OrNewer {
     return [self systemVersionIsNewerThan:@"10.0"];
-}
-
--(BOOL)supportsHealthkit {
-    if ([[[self model] lowercaseString] isEqualToString:@"ipad"]) {
-        return NO;
-    }
-    if (!NSClassFromString(@"HKHealthStore")) {
-        return NO;
-    } else {
-        if (![HKHealthStore isHealthDataAvailable]) {
-            return NO;
-        }
-    }
-    if ([self minorSystemVersionIsNewerThan:@"8.0.2"]) {
-        return YES;
-    }
-    return NO;
 }
 
 @end
