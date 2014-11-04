@@ -11,7 +11,7 @@
 
 @implementation UIDevice (AWKDeviceHelper)
 
--(BOOL)hasRetinaScreen {
+- (BOOL)hasRetinaScreen {
     if ([UIScreen instancesRespondToSelector:@selector(scale)]) {
         CGFloat scale = [[UIScreen mainScreen] scale];
         if (scale > 1.0) {
@@ -25,7 +25,7 @@
 }
 
 
--(BOOL)hasRetinaHDScreen {
+- (BOOL)hasRetinaHDScreen {
     if ([UIScreen instancesRespondToSelector:@selector(scale)]) {
         CGFloat scale = [[UIScreen mainScreen] scale];
         if (scale > 2.0) {
@@ -38,36 +38,36 @@
     }
 }
 
--(NSString *)deviceModel {
+- (NSString *)deviceModel {
     struct utsname systemInfo;
     uname(&systemInfo);
     return [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
 }
 
--(BOOL)has35InchScreen {
+- (BOOL)has35InchScreen {
     UIScreen *screen = [UIScreen mainScreen];
     CGSize size = screen.bounds.size;
     return (size.height == 480 && size.width == 320);
 }
 
--(BOOL)has4InchScreen {
+- (BOOL)has4InchScreen {
     UIScreen *screen = [UIScreen mainScreen];
     CGSize size = screen.bounds.size;
     return (size.height == 568 && size.width == 320);
 }
 
--(BOOL)systemVersionIsNewerThan:(NSString *)systemVersion {
+- (BOOL)systemVersionIsNewerThan:(NSString *)systemVersion {
     return [self majorSystemVersionIsNewerThan:systemVersion];
 }
 
--(BOOL)majorSystemVersionIsNewerThan:(NSString *)systemVersion {
+- (BOOL)majorSystemVersionIsNewerThan:(NSString *)systemVersion {
     if ([[self systemVersion] floatValue] >= [systemVersion floatValue]) {
         return YES;
     }
     return NO;
 }
 
--(BOOL)minorSystemVersionIsNewerThan:(NSString *)systemVersion {
+- (BOOL)minorSystemVersionIsNewerThan:(NSString *)systemVersion {
     if (![self majorSystemVersionIsNewerThan:systemVersion]) {
         return NO;
     }
@@ -90,31 +90,31 @@
     return NO;
 }
 
--(BOOL)hasiOS4OrNewer {
+- (BOOL)hasiOS4OrNewer {
     return [self systemVersionIsNewerThan:@"4.0"];
 }
 
--(BOOL)hasiOS5OrNewer {
+- (BOOL)hasiOS5OrNewer {
     return [self systemVersionIsNewerThan:@"5.0"];
 }
 
--(BOOL)hasiOS6OrNewer {
+- (BOOL)hasiOS6OrNewer {
     return [self systemVersionIsNewerThan:@"6.0"];
 }
 
--(BOOL)hasiOS7OrNewer {
+- (BOOL)hasiOS7OrNewer {
     return [self systemVersionIsNewerThan:@"7.0"];
 }
 
--(BOOL)hasiOS8OrNewer {
+- (BOOL)hasiOS8OrNewer {
     return [self systemVersionIsNewerThan:@"8.0"];
 }
 
--(BOOL)hasiOS9OrNewer {
+- (BOOL)hasiOS9OrNewer {
     return [self systemVersionIsNewerThan:@"9.0"];
 }
 
--(BOOL)hasiOS10OrNewer {
+- (BOOL)hasiOS10OrNewer {
     return [self systemVersionIsNewerThan:@"10.0"];
 }
 

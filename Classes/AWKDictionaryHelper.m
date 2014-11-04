@@ -10,11 +10,11 @@
 
 @implementation NSDictionary (AWKDictionaryHelper)
 
--(BOOL)isValidObjectForKey:(NSString *)key {
+- (BOOL)isValidObjectForKey:(NSString *)key {
     return [self isValidObjectForKey:key ofType:AWKDictionaryValueTypeNotImportant];
 }
 
--(BOOL)isValidObjectForKey:(NSString *)key ofType:(AWKDictionaryValueType)type {
+- (BOOL)isValidObjectForKey:(NSString *)key ofType:(AWKDictionaryValueType)type {
     BOOL isValid = [self objectForKeyIsValid:key];
     if (type == AWKDictionaryValueTypeNotImportant || !isValid) {
         return isValid;
@@ -36,7 +36,7 @@
     }
 }
 
--(BOOL)objectForKeyIsValid:(NSString *)key {
+- (BOOL)objectForKeyIsValid:(NSString *)key {
     if (![self objectForKey:key]) {
         return NO;
     } else if ([[self objectForKey:key] isKindOfClass:[NSNull class]]) {
@@ -48,19 +48,19 @@
     }
 }
 
--(BOOL)objectForKeyIsValidArray:(NSString *)key {
+- (BOOL)objectForKeyIsValidArray:(NSString *)key {
     return [self objectForKey:key isValidForClass:[NSArray class]];
 }
 
--(BOOL)objectForKeyIsValidDictionary:(NSString *)key {
+- (BOOL)objectForKeyIsValidDictionary:(NSString *)key {
     return [self objectForKey:key isValidForClass:[NSDictionary class]];
 }
 
--(BOOL)objectForKeyIsValidString:(NSString *)key {
+- (BOOL)objectForKeyIsValidString:(NSString *)key {
     return [self objectForKey:key isValidForClass:[NSString class]];
 }
 
--(BOOL)objectForKey:(NSString *)key isValidForClass:(Class)aClass {
+- (BOOL)objectForKey:(NSString *)key isValidForClass:(Class)aClass {
     if (![self objectForKeyIsValid:key]) {
         return NO;
     }
@@ -69,5 +69,8 @@
     return isValid;
 }
 
+- (BOOL)isEmpty {
+    return (self.count == 0);
+}
 
 @end

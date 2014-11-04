@@ -1,15 +1,20 @@
 
 Pod::Spec.new do |s|
   s.name             = "AWKHelpers"
-  s.version          = "0.2.1"
+  s.version          = "0.3.0"
   s.summary          = "A growing collection of UIKit and Foundation categories (helpers)"
   s.description      = <<-DESC
-                       A growing collection of UIKit and Foundation categories (helpers). Support includes: 
-- NSDictionary
+A growing collection of UIKit and Foundation categories (helpers) we use at Awkward
+
+Current helpers:
+- UIApplication
 - NSArray
-- NSString
-- UIDevice
 - UIColor
+- NSDate*
+- UIDevice
+- NSDictionary
+- UIFont
+- NSSTring
                        DESC
   s.homepage         = "https://github.com/awkward/AWKHelpers"
   s.license          = 'MIT'

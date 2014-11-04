@@ -10,6 +10,53 @@
 
 @implementation UIColor (AWKColorHelper)
 
++ (UIColor *)colorWithColorString:(NSString *)colorString {
+    if ([colorString rangeOfString:@"#"].location != NSNotFound) {
+        colorString = [colorString stringByReplacingOccurrencesOfString:@"#" withString:@""];
+    }
+    UIColor *color = nil;
+    if ([colorString isEqualToString:@"red"])
+        color = [UIColor redColor];
+    if ([colorString isEqualToString:@"green"])
+        color = [UIColor greenColor];
+    if ([colorString isEqualToString:@"blue"])
+        color = [UIColor blueColor];
+    if ([colorString isEqualToString:@"yellow"])
+        color = [UIColor yellowColor];
+    if ([colorString isEqualToString:@"purple"])
+        color = [UIColor purpleColor];
+    if ([colorString isEqualToString:@"light_gray"])
+        color = [UIColor lightGrayColor];
+    if ([colorString isEqualToString:@"lightgray"])
+            color = [UIColor lightGrayColor];
+    if ([colorString isEqualToString:@"gray"])
+        color = [UIColor grayColor];
+    if ([colorString isEqualToString:@"dark_gray"])
+        color = [UIColor darkGrayColor];
+    if ([colorString isEqualToString:@"darkgray"])
+        color = [UIColor darkGrayColor];
+    if ([colorString isEqualToString:@"brown"])
+        color = [UIColor brownColor];
+    if ([colorString isEqualToString:@"cyan"])
+        color = [UIColor cyanColor];
+    if ([colorString isEqualToString:@"magenta"])
+        color = [UIColor magentaColor];
+    if ([colorString isEqualToString:@"orange"])
+        color = [UIColor magentaColor];
+    if ([colorString isEqualToString:@"clear"])
+        color = [UIColor clearColor];
+    if ([colorString isEqualToString:@"000"] || [colorString isEqualToString:@"000000"] || [colorString isEqualToString:@"black"])
+        color = [UIColor blackColor];
+    if ([colorString isEqualToString:@"fff"] || [colorString isEqualToString:@"ffffff"] || [colorString isEqualToString:@"white"])
+        color = [UIColor whiteColor];
+    
+    if (!color) {
+        color = [UIColor colorWithHexString:colorString];
+    }
+    
+    return color;
+}
+
 + (UIColor *)colorWithHexString:(NSString *)hexString {
     NSString *colorString = [[hexString stringByReplacingOccurrencesOfString: @"#" withString: @""] uppercaseString];
     CGFloat alpha, red, blue, green;
