@@ -15,42 +15,42 @@
  
  @return Returns YES if the current device has a retina display.
  */
--(BOOL)hasRetinaScreen;
+- (BOOL)hasRetinaScreen;
 
 /**
  Checks if the current UIDevice has a retinaHD display
  
  @return Returns YES if the current device has a retinaHD display.
  */
--(BOOL)hasRetinaHDScreen;
+- (BOOL)hasRetinaHDScreen;
 
 /**
  Returns the device model of the current UIDevice
  
  @return Returns a string of the current device model
  */
--(NSString *)deviceModel;
+- (NSString *)deviceModel;
 
 /**
  Checks if the current UIDevice has a 3,5 inch screen
  
  @return Returns YES if the device has a 3,5 inch screen
  */
--(BOOL)has35InchScreen;
+- (BOOL)has35InchScreen;
 
 /**
  Checks if the current UIDevice has a 4 inch screen
  
  @return Returns YES if the device has a 3,5 inch screen
  */
--(BOOL)has4InchScreen;
+- (BOOL)has4InchScreen;
 
 /**
  Checks if the systemVersion is newer than the Current UIDevice's systemVersion
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)systemVersionIsNewerThan:(NSString *)systemVersion;
+- (BOOL)systemVersionIsNewerThan:(NSString *)systemVersion;
 
 /**
  Checks if the systemVersion is newer than the Current UIDevice's systemVersion.
@@ -58,7 +58,7 @@
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)majorSystemVersionIsNewerThan:(NSString *)systemVersion;
+- (BOOL)majorSystemVersionIsNewerThan:(NSString *)systemVersion;
 
 /**
  Checks if the systemVersion is newer than the Current UIDevice's systemVersion.
@@ -66,55 +66,55 @@
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)minorSystemVersionIsNewerThan:(NSString *)systemVersion;
+- (BOOL)minorSystemVersionIsNewerThan:(NSString *)systemVersion;
 
 /**
  Checks if the Current UIDevice's systemVersion is iOS 4 or newer than iOS 4.
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)hasiOS4OrNewer;
+- (BOOL)hasiOS4OrNewer;
 
 /**
  Checks if the Current UIDevice's systemVersion is iOS 5 or newer than iOS 5.
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)hasiOS5OrNewer;
+- (BOOL)hasiOS5OrNewer;
 
 /**
  Checks if the Current UIDevice's systemVersion is iOS 6 or newer than iOS 6.
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)hasiOS6OrNewer;
+- (BOOL)hasiOS6OrNewer;
 
 /**
  Checks if the Current UIDevice's systemVersion is iOS 7 or newer than iOS 7.
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)hasiOS7OrNewer;
+- (BOOL)hasiOS7OrNewer;
 
 /**
  Checks if the Current UIDevice's systemVersion is iOS 8 or newer than iOS 8.
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)hasiOS8OrNewer;
+- (BOOL)hasiOS8OrNewer;
 
 /**
  Checks if the Current UIDevice's systemVersion is iOS 9 or newer than iOS 9.
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)hasiOS9OrNewer;
+- (BOOL)hasiOS9OrNewer;
 
 /**
  Checks if the Current UIDevice's systemVersion is iOS 10 or newer than iOS 10.
  
  @return Returns YES if the device systemVersion is newer, if not it's NO
  */
--(BOOL)hasiOS10OrNewer;
+- (BOOL)hasiOS10OrNewer;
 
 @end

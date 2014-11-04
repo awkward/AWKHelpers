@@ -105,7 +105,7 @@
 
 #pragma mark Trimming methods
 
--(NSString*)stringByTrimmingLeadingWhitespace {
+- (NSString*)stringByTrimmingLeadingWhitespace {
     NSInteger i = 0;
     
     while ((i < [self length])
@@ -115,7 +115,7 @@
     return [self substringFromIndex:i];
 }
 
--(NSString*)stringByTrimmingTrailingNewLine {
+- (NSString*)stringByTrimmingTrailingNewLine {
     return [self stringByTrimmingTrailingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 }
 

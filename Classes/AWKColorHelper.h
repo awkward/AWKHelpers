@@ -11,6 +11,15 @@
 @interface UIColor (AWKColorHelper)
 
 /**
+ Transforms the given string into a UIColor
+ 
+ @param colorString A hex or default name string to turn into a color. Default colors are the colors supported by UIColor like green, red, blue, yellow, cyan etc.
+ 
+ @return Returns the UIColor that is the closest color string, this could be nil if the name string is not a valid name
+ */
++ (UIColor *)colorWithColorString:(NSString *)colorString;
+
+/**
  Transforms the given string (hex) into a UIColor
  
  @param hexString The hex string in one of the following formats: #RGB, #ARGB, #RRGGBB, #AARRGGBB

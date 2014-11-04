@@ -24,7 +24,7 @@ typedef enum {
  
  @return YES if the object is valid, NO if not all tests are passed.
  */
--(BOOL)isValidObjectForKey:(NSString *)key;
+- (BOOL)isValidObjectForKey:(NSString *)key;
 
 /**
  Tests to see if the object is a valid object in the dictionary. Test include: does the object exist, is the object not NSNULL and is the object not nil. This allso checks for the giving types
@@ -34,7 +34,7 @@ typedef enum {
  
  @return YES if the object is valid, NO if not all tests are passed.
  */
--(BOOL)isValidObjectForKey:(NSString *)key ofType:(AWKDictionaryValueType)type;
+- (BOOL)isValidObjectForKey:(NSString *)key ofType:(AWKDictionaryValueType)type;
 
 /**
  ests to see if the object is a valid object in the dictionary. Tests include: does the object exist, is the object not NSNULL and is the object not nil.
@@ -43,7 +43,7 @@ typedef enum {
  
  @return YES if the object is valid, NO if not all tests are passed.
  */
--(BOOL)objectForKeyIsValid:(NSString *)key;
+- (BOOL)objectForKeyIsValid:(NSString *)key;
 
 /**
  Tests to see if the object is a valid object in the dictionary. Tests include: does the object exist, is the object not NSNULL, is the object not nil and is the object member of the specified class.
@@ -53,7 +53,7 @@ typedef enum {
  
  @return YES if the object is valid, NO if not all tests are passed.
  */
--(BOOL)objectForKey:(NSString *)key isValidForClass:(Class)aClass;
+- (BOOL)objectForKey:(NSString *)key isValidForClass:(Class)aClass;
 
 /**
  Tests to see if the object is a valid NSArray or NSMutableArray in the dictionary. Tests include: does the object exist, is the object not NSNULL, is the object not nil and is the object member of the NSArray class.
@@ -62,7 +62,7 @@ typedef enum {
  
  @return YES if the object is valid, NO if not all tests are passed.
  */
--(BOOL)objectForKeyIsValidArray:(NSString *)key;
+- (BOOL)objectForKeyIsValidArray:(NSString *)key;
 
 /**
  Tests to see if the object is a valid NSDictionary or NSMutableDictionary in the dictionary. Tests include: does the object exist, is the object not NSNULL, is the object not nil and is the object member of the NSDictionary class.
@@ -71,7 +71,7 @@ typedef enum {
  
  @return YES if the object is valid, NO if not all tests are passed.
  */
--(BOOL)objectForKeyIsValidDictionary:(NSString *)key;
+- (BOOL)objectForKeyIsValidDictionary:(NSString *)key;
 
 /**
  Tests to see if the object is a valid NSString or NSMutableString in the dictionary. Tests include: does the object exist, is the object not NSNULL, is the object not nil and is the object member of the NSString class.
@@ -80,7 +80,13 @@ typedef enum {
  
  @return YES if the object is valid, NO if not all tests are passed.
  */
--(BOOL)objectForKeyIsValidString:(NSString *)key;
+- (BOOL)objectForKeyIsValidString:(NSString *)key;
 
+/**
+ Checks if the dictionary contains any objects
+ 
+ @return Returns YES if the dictionary is empty
+ */
+- (BOOL)isEmpty;
 
 @end
