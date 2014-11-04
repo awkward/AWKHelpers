@@ -11,7 +11,7 @@ Current helpers:
 - UIDevice
 - NSDictionary
 - UIFont
-- NSSTring
+- NSString
 
 *The AWKDateHelper is still in development and might not give the wanted results.
 
