@@ -10,7 +10,7 @@
 
 @implementation UIFont (AWKFontHelper)
 
-- (void)logAvailableFontsWithName:(NSString *)name {
++ (void)logAvailableFontsWithName:(NSString *)name {
     NSArray *familyNames = [UIFont familyNames];
     NSString *nameString = name;
     BOOL logged = NO;

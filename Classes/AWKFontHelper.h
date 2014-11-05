@@ -16,6 +16,6 @@
  @param name A font name to filter the response for the given name
 
  */
-- (void)logAvailableFontsWithName:(NSString *)name;
++ (void)logAvailableFontsWithName:(NSString *)name;
 
 @end
