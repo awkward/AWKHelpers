@@ -8,7 +8,7 @@
 
 #import "AWKDictionaryHelper.h"
 
-@implementation NSMutableDictionary (AWKDictionaryHelper)
+@implementation NSMutableDictionary (AWKMutableDictionaryHelper)
 
 - (void)setObjectIfNonNil:(id)anObject forKey:(id <NSCopying>)aKey {
     if (anObject) {
