@@ -8,6 +8,22 @@
 
 #import "AWKDictionaryHelper.h"
 
+@implementation NSMutableDictionary (AWKDictionaryHelper)
+
+- (void)setObjectIfNonNil:(id)anObject forKey:(id <NSCopying>)aKey {
+    if (anObject) {
+        [self setObject:anObject forKey:aKey];
+    }
+}
+
+- (void)setValueIfNonNil:(id)value forKey:(NSString *)key {
+    if (value) {
+        [self setValue:value forKey:key];
+    }
+}
+
+@end
+
 @implementation NSDictionary (AWKDictionaryHelper)
 
 - (BOOL)isValidObjectForKey:(NSString *)key {
@@ -28,6 +44,9 @@
                 break;
             case AWKDictionaryValueTypeString:
                 return [self objectForKeyIsValidString:key];
+                break;
+            case AWKDictionaryValueTypeNumber:
+                return [self objectForKeyIsValidNumber:key];
                 break;
             default:
                 return isValid;
@@ -58,6 +77,10 @@
 
 - (BOOL)objectForKeyIsValidString:(NSString *)key {
     return [self objectForKey:key isValidForClass:[NSString class]];
+}
+
+- (BOOL)objectForKeyIsValidNumber:(NSString *)key {
+    return [self objectForKey:key isValidForClass:[NSNumber class]];
 }
 
 - (BOOL)objectForKey:(NSString *)key isValidForClass:(Class)aClass {

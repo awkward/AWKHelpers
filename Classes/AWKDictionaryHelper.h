@@ -12,13 +12,34 @@ typedef enum {
     AWKDictionaryValueTypeNotImportant,
     AWKDictionaryValueTypeArray,
     AWKDictionaryValueTypeString,
+    AWKDictionaryValueTypeNumber,
     AWKDictionaryValueTypeDictionary
 } AWKDictionaryValueType;
+
+@interface NSMutableDictionary (AWKDictionaryHelper)
+
+/**
+ Tests to see if the object is a non nil object and puts it in the dictionary.
+ 
+ @param anObject The object to check and put in the dictionary.
+ @param aKey The key for the object in the dictionary.
+ */
+- (void)setObjectIfNonNil:(id)anObject forKey:(id <NSCopying>)aKey;
+
+/**
+ Tests to see if the value is a non nil object and puts it in the dictionary.
+ 
+ @param value The value to check and put in the dictionary.
+ @param key The key for the object in the dictionary.
+ */
+- (void)setValueIfNonNil:(id)value forKey:(NSString *)key;
+
+@end
 
 @interface NSDictionary (AWKDictionaryHelper)
 
 /**
- ests to see if the object is a valid object in the dictionary. Checks include: does the object exist, is the object not NSNULL and is the object not nil.
+ Tests to see if the object is a valid object in the dictionary. Checks include: does the object exist, is the object not NSNULL and is the object not nil.
  
  @param key The key for the object in the dictionary.
  
