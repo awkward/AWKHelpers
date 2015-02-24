@@ -16,7 +16,7 @@ typedef enum {
     AWKDictionaryValueTypeDictionary
 } AWKDictionaryValueType;
 
-@interface NSMutableDictionary (AWKDictionaryHelper)
+@interface NSMutableDictionary (AWKMutableDictionaryHelper)
 
 /**
  Tests to see if the object is a non nil object and puts it in the dictionary.
