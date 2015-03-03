@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 enum {
     NSTruncateStringPositionStart=0,
@@ -111,4 +112,37 @@ enum {
  @return Returns a UTF-8 encoded string representation of current string
  */
 - (NSString *)URLEncodedString;
+
+#pragma mark Attributed Methods
+
+/**
+ Creates a NSAttributedString from the string with the given line height
+ 
+ @param lineHeight The lineheight to assign to the whole string
+ 
+ @return Returns a NSAttributedString with the paragraphstyle and the required line height
+ */
+- (NSAttributedString *)attributedStringWithLineHeight:(CGFloat)lineHeight;
+
+/**
+ Creates a NSAttributedString from the string with the given line height and alignment
+ 
+ @param lineHeight The lineheight to assign to the whole string
+ @param textAlignment The alignment to assign to the whole string
+ @param font The font to assign to the whole string
+ 
+ @return Returns a NSAttributedString with the paragraphstyle and the required line height and alignment
+ */
+- (NSAttributedString *)attributedStringWithLineHeight:(CGFloat)lineHeight textAlignement:(NSTextAlignment)textAlignment;
+
+/**
+ Creates a NSAttributedString from the string with the given line height, alignment and font
+ 
+ @param lineHeight The lineheight to assign to the whole string
+ @param textAlignment The alignment to assign to the whole string
+ 
+ @return Returns a NSAttributedString with the paragraphstyle and the required line height, text alignment and font
+ */
+- (NSAttributedString *)attributedStringWithLineHeight:(CGFloat)lineHeight textAlignement:(NSTextAlignment)textAlignment font:(UIFont *)font;
+
 @end
