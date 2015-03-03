@@ -8,6 +8,8 @@
 
 #import "AWKStringHelper.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "AWKDictionaryHelper.h"
+
 
 @implementation NSString (AWKStringHelper)
 
@@ -157,4 +159,28 @@
     return output;
 }
 
+#pragma mark Attributed Methods
+
+- (NSAttributedString *)attributedStringWithLineHeight:(CGFloat)lineHeight {
+    return [self attributedStringWithLineHeight:lineHeight textAlignement:NSTextAlignmentLeft];
+    
+}
+
+- (NSAttributedString *)attributedStringWithLineHeight:(CGFloat)lineHeight textAlignement:(NSTextAlignment)textAlignment {
+    return [self attributedStringWithLineHeight:lineHeight textAlignement:textAlignment font:nil];
+    
+}
+
+- (NSAttributedString *)attributedStringWithLineHeight:(CGFloat)lineHeight textAlignement:(NSTextAlignment)textAlignment font:(UIFont *)font {
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    [attributes setObjectIfNonNil:font forKey:NSFontAttributeName];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [paragraphStyle setMinimumLineHeight:lineHeight];
+    [paragraphStyle setMaximumLineHeight:lineHeight];
+    [paragraphStyle setAlignment:textAlignment];
+    [attributes setObjectIfNonNil:paragraphStyle forKey:NSParagraphStyleAttributeName];
+    return [[NSAttributedString alloc] initWithString:self attributes:attributes];
+    
+}
 @end
