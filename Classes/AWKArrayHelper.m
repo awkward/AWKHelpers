@@ -42,6 +42,23 @@
     return YES;
 }
 
+- (NSArray *)arrayByMappingObjectsWithBlock:(id (^)(id obj, NSUInteger idx))mapBlock options:(AWKArrayMappingOptions)options {
+    NSAssert(mapBlock!=nil, @"Map block should not be nil");
+    NSMutableArray *mappedArray = [[NSMutableArray alloc] initWithCapacity:self.count];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        id result = mapBlock(obj, idx);
+        if (result) {
+            [mappedArray addObject:result];
+        } else if (options&AWKArrayMapNilToNull) {
+            [mappedArray addObject:[NSNull null]];
+        } else if ((options&AWKArrayMapNilToDeletion) == 0) {
+            [mappedArray addObject:obj];
+        }
+    }];
+    NSArray *resultArray = [mappedArray copy];
+    return resultArray;
+}
+
 @end
 
 @implementation NSMutableArray (AWKArrayHelper)
@@ -58,6 +75,25 @@
         
         i++;
         j--;
+    }
+}
+
+- (void)replaceObjectsWithBlock:(id (^)(id obj, NSUInteger idx))mapBlock options:(AWKArrayMappingOptions)options{
+    NSAssert(mapBlock!=nil, @"Map block should not be nil");
+    NSMutableIndexSet *deletedIndices = [[NSMutableIndexSet alloc] init];
+    for (NSUInteger idx = 0; idx < self.count; idx++) {
+        id oldObject = self[idx];
+        id newObject = mapBlock(oldObject, idx);
+        if (newObject) {
+            [self replaceObjectAtIndex:idx withObject:newObject];
+        } else if (options&AWKArrayMapNilToNull) {
+            [self replaceObjectAtIndex:idx withObject:[NSNull null]];
+        } else if (options&AWKArrayMapNilToDeletion) {
+            [deletedIndices addIndex:idx];
+        }
+    }
+    if (deletedIndices.count > 0) {
+        [self removeObjectsAtIndexes:deletedIndices];
     }
 }
 
