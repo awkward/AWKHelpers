@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AWKHelpers"
-  s.version          = "0.6"
+  s.version          = "0.7"
   s.summary          = "A growing collection of UIKit and Foundation categories (helpers)"
   s.description      = <<-DESC
 A growing collection of UIKit and Foundation categories (helpers) we use at Awkward

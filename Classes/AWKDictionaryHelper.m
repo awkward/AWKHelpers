@@ -1,6 +1,6 @@
 //
 //  AWKDictionaryHelper.m
-//  Awkward Helpers
+//  AWKHelpers
 //
 //  Created by Rens Verhoeven on 24-10-14.
 //  Copyright (c) 2014 Awkward. All rights reserved.
