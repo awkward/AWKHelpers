@@ -22,6 +22,7 @@
 		0C47E6C41AB9C15F00763936 /* AWKFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C47E6B91AB9C15F00763936 /* AWKFontHelper.m */; };
 		0C47E6C51AB9C15F00763936 /* AWKStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C47E6BC1AB9C15F00763936 /* AWKStringHelper.m */; };
 		0C47E6C81AB9C1BC00763936 /* LineHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C47E6C71AB9C1BC00763936 /* LineHeightViewController.m */; };
+		0C47E6CD1AB9C61D00763936 /* AWKHelpersDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C47E6CC1AB9C61D00763936 /* AWKHelpersDictionaryTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		0C47E6BC1AB9C15F00763936 /* AWKStringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWKStringHelper.m; sourceTree = "<group>"; };
 		0C47E6C61AB9C1BC00763936 /* LineHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineHeightViewController.h; sourceTree = "<group>"; };
 		0C47E6C71AB9C1BC00763936 /* LineHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineHeightViewController.m; sourceTree = "<group>"; };
+		0C47E6CC1AB9C61D00763936 /* AWKHelpersDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWKHelpersDictionaryTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				0C47E6841AB9C14D00763936 /* AWKHelpersTests.m */,
+				0C47E6CC1AB9C61D00763936 /* AWKHelpersDictionaryTests.m */,
 				0C47E6821AB9C14D00763936 /* Supporting Files */,
 			);
 			path = AWKHelpersTests;
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C47E6851AB9C14D00763936 /* AWKHelpersTests.m in Sources */,
+				0C47E6CD1AB9C61D00763936 /* AWKHelpersDictionaryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
