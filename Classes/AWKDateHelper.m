@@ -1,6 +1,6 @@
 //
 //  AWKDateHelper.m
-//  Awkward Helpers
+//  AWKHelpers
 //
 //  Created by Rens Verhoeven on 04-11-14.
 //  Copyright (c) 2014 Awkward. All rights reserved.
@@ -47,7 +47,7 @@
 }
 
 - (NSDate *)midnightDate {
-    return [[NSCalendar autoupdatingCurrentCalendar] dateFromComponents:[[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self]];
+    return [[NSCalendar autoupdatingCurrentCalendar] dateFromComponents:[[NSCalendar currentCalendar] components:(NSCalendarUnitWeekOfYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self]];
 }
 
 + (NSDate *)tommorowDate {
