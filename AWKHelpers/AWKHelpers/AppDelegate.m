@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AWKImageHelper.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    CGSize minimumSize = CGSizeMake(500, 500);
+    UIImage *image1 = [[UIImage imageNamed:@"image1"] imageScaledToFitSize:minimumSize];
+    UIImage *image2 = [[UIImage imageNamed:@"image2"] imageScaledToFitSize:minimumSize];
+    UIImage *image3 = [[UIImage imageNamed:@"image3"] imageScaledToFitSize:minimumSize];
+    
     return YES;
 }
 
