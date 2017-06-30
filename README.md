@@ -1,3 +1,7 @@
+# This repository is no longer being maintained
+
+The categories in this repository can still be used, but are no longer updated. 
+
 AWKHelpers
 ===============
 
