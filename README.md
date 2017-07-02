@@ -10,6 +10,7 @@ A growing collection of UIKit and Foundation categories (helpers) we use at Awkw
 Current helpers:
 - UIApplication
 - NSArray
+  - Queue
 - UIColor
 - NSDate*
 - UIDevice
